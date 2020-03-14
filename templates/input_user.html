@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<!-- ====================================
+
+A simple user registration system with FLASK.
+Delete and Update user information
+
+=> By Tesla
+ 
+=======================================-->
+
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask simple project</title>
+
+    <!-- Styling the website -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input_user.css')  }}"> 
+</head>
+
+
+
+<body>
+
+    <h1>User Registration by Hacker_Tesla with FLASK</h1>
+    
+    <div class="row">
+
+        <div class="column" id="add_user">
+        
+            {%  if pagename == 'home' %}
+            <form action="{{    url_for('index')    }}" method="POST">
+            {%  endif   %}
+
+            {%  if pagename == 'updatehome' %}
+            <form action="/update/{{user.id}}" method="POST">
+            {%  endif   %}
+
+                <input type="text" 
+                    name="firstname"
+                    placeholder="Enter your first name"
+                    value="{{   user.firstname  }}"
+                />
+
+                <br/>
+
+                <input type="text"
+                    name="lastname"
+                    placeholder="Enter your last name"
+                    value="{{   user.lastname  }}"
+                />
+
+                <br/>
+
+                <input type="text" 
+                    name="email"
+                    placeholder="Enter your email"
+                    value="{{   user.email  }}"
+                />
+
+                <br/>
+
+                <input type="password"
+                    name="password"
+                    placeholder="Make a password"
+                    value="{{   user.password  }}"
+                />
+
+                <br/>
+
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+
+        </div>
+
+
+        <div class="column" id="display_user">
+
+            <table>
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </thead>
+
+                <tbody>
+
+                    {%  for i in users  %}
+                    <tr>
+                        <td> {{  i.firstname  }} </td>
+                        <td>{{  i.lastname  }}</td>
+                        <td>{{  i.email  }}</td>
+                        <td>{{  i.password  }}</td>
+                        <td>
+                            <a href="/delete/{{i.id}}">
+                                DELETE
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/update/{{i.id}}">
+                                UPDATE
+                            </a>
+                        </td>
+                    </tr>
+                    {%  endfor  %}
+    
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Follow me on
+        <div class="contact">
+            Github : github.com/hacker-tesla 
+        </div>
+
+        <div class="contact">
+            E-mail : hacker_tesla@protonmail.com
+        </div>
+
+    </footer>
+
+</body>
+
+
+
+</html>

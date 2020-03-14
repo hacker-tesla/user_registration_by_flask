@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1{
+    text-align: center;
+    font-family: agency fb;
+}
+
+
+
+
+
+
+
+
+
+/* making two coulmn with flexbox */
+.row{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+/* add user section */
+#add_user{
+    flex: 1;
+}
+
+.column input{
+    width: 100%;
+    margin: 2% 10%;
+    padding: 10px 20px;
+    outline: none;
+}
+
+#add_user button{
+    padding: 2% 20%;
+    margin-left: 10%;
+    font-weight: 1000;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* display user section */
+#display_user{
+    flex: 2;
+}
+
+table{
+    margin-left: 120px;
+}
+
+table th{
+    background-color:#ebdfdf;
+    padding: 5px 20px;
+}
+
+/* make all content of table in center */
+table td{
+    text-align: center;
+}
+
+/* beautify delete and update button */
+table tbody tr td a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0 20px;
+    background-color: #292525;
+}
+
+
+
+
+
+/* footer section */
+footer{
+    margin-top: 10%;
+
+    text-align: center;
+    font-family: cursive;
+}
+
